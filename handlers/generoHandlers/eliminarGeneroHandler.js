@@ -8,7 +8,7 @@ const eliminarGeneroHandler = async (req, res) => {
     const {id} = req.params;
     const result = await eliminarGenero(id);
     if(!result.deleted) return res.status(400).send({error: "Genero inexistente"});
-    return res.status(200).json({result: "Borrado exitoso"});
+    return res.status(200).json(result);
   } catch (error) {
     console.log(error);
     return res.status(500).json({error: "Ha ocurrido un error"});
