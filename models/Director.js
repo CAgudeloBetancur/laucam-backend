@@ -1,3 +1,4 @@
+import { estados } from "../utils/valores";
 import {Schema, model} from "mongoose";
 
 const DirectorSchema = Schema({
@@ -8,7 +9,7 @@ const DirectorSchema = Schema({
     estado: {
         type: String, 
         required: true,
-        enum: ["Activo", "Inactivo"]
+        enum: estados
     },
     fechaCreacion: {
         type: Date, 
