@@ -1,9 +1,9 @@
 import { check, body } from "express-validator";
 import { validarRequest } from "./common/validarRequest.js";
-import { estados } from "../utils/valores.js";
 import { validacionesPatch } from "./common/validacionesPatch.js";
 import { validacionesPost } from "./common/validacionesPost.js";
 import { validacionesPut } from "./common/validacionesPut.js";
+import { estados } from "../utils/valores.js";
 import Genero from "../models/Genero.js";
 
 const validarGeneroBodyPatch = [

@@ -1,19 +1,24 @@
+// Router
 import { Router } from "express";
 const directorRouter = Router();
+// Handlers
 import crearDirectorHandler from "../handlers/directorHandlers/crearDirectorHandler.js";
 import listarDirectoresHandler from "../handlers/directorHandlers/listarDirectoresHandler.js";
 import eliminarDirectorHandler from "../handlers/directorHandlers/eliminarDirectorHandler.js";
 import obtenerDirectorPorIdHandler from "../handlers/directorHandlers/obtenerDirectorPorIdHandler.js";
 import editarDirectorHandler from "../handlers/directorHandlers/editarDirectorHandler.js";
 import editarParcialDirectorHandler from "../handlers/directorHandlers/editarParcialDirectorHandler.js";
-
 // Middlewares
 import { 
   validacionesPatchDirector, 
   validacionesPostDirector, 
   validacionesPutDirector } 
   from "../middlewares/rutaDirectorMiddlewares.js";
-import { validarParametroId } from "../middlewares/common/validarParametroId.js";
+import { 
+  validarParametroId } 
+  from "../middlewares/common/validarParametroId.js";
+
+// Rutas
 
 // Crear Director
 directorRouter.post("/", validacionesPostDirector,crearDirectorHandler);

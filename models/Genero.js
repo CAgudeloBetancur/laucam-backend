@@ -1,3 +1,4 @@
+import { estados } from "../utils/valores";
 import {Schema, model} from "mongoose";
 
 const GeneroSchema = Schema({
@@ -8,7 +9,7 @@ const GeneroSchema = Schema({
     estado: {
         type: String, 
         required: true,
-        enum: ["Activo", "Inactivo"]
+        enum: estados
     },
     descripcion: {
         type: String, 
