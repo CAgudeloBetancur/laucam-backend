@@ -1,9 +1,9 @@
 import { check, body } from "express-validator";
 import { validarRequest } from "./common/validarRequest.js";
-import { validarParametroId } from "./common/validarParametroId.js";
-import { validarPropiedadesPatch } from "./common/validarPropiedadesPatch.js";
-import { validarBodyVacio } from "./common/validarBodyVacio.js";
 import { estados } from "../utils/valores.js";
+import { validacionesPatch } from "./common/validacionesPatch.js";
+import { validacionesPost } from "./common/validacionesPost.js";
+import { validacionesPut } from "./common/validacionesPut.js";
 import Genero from "../models/Genero.js";
 
 const validarGeneroBodyPatch = [
@@ -24,24 +24,14 @@ const validarGeneroBody = [
   check('estado', 'estado no valido').isIn(estados)
 ]
 
-const validacionesPatch = [
-  ...validarBodyVacio,
-  ...validarParametroId, 
-  ...validarPropiedadesPatch(Genero),
-  ...validarGeneroBodyPatch
-];
+export const validacionesPatchGenero = validarRequest(
+  validacionesPatch(validarGeneroBodyPatch, Genero)
+);
 
-const validacionesPost = [
-  ...validarBodyVacio,
-  ...validarGeneroBody
-]
+export const validacionesPostGenero = validarRequest(
+  validacionesPost(validarGeneroBody)
+);
 
-const validacionesPut = [
-  ...validarBodyVacio,
-  ...validarParametroId,
-  ...validarGeneroBody
-]
-
-export const validacionesPatchGenero = [ validarRequest(validacionesPatch) ];
-export const validacionesPostGenero = [ validarRequest(validacionesPost) ];
-export const validacionesPutGenero = [ validarRequest(validacionesPut) ];
+export const validacionesPutGenero = validarRequest(
+  validacionesPut(validarGeneroBody)
+);

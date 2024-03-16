@@ -7,17 +7,25 @@ import obtenerDirectorPorIdHandler from "../handlers/directorHandlers/obtenerDir
 import editarDirectorHandler from "../handlers/directorHandlers/editarDirectorHandler.js";
 import editarParcialDirectorHandler from "../handlers/directorHandlers/editarParcialDirectorHandler.js";
 
+// Middlewares
+import { 
+  validacionesPatchDirector, 
+  validacionesPostDirector, 
+  validacionesPutDirector } 
+  from "../middlewares/rutaDirectorMiddlewares.js";
+import { validarParametroId } from "../middlewares/common/validarParametroId.js";
+
 // Crear Director
-directorRouter.post("/", crearDirectorHandler);
+directorRouter.post("/", validacionesPostDirector,crearDirectorHandler);
 // Listar Directores
 directorRouter.get("/lista", listarDirectoresHandler);
 // Eliminar Director por id
-directorRouter.delete("/:id", eliminarDirectorHandler);
+directorRouter.delete("/:id", validarParametroId, eliminarDirectorHandler);
 // Obtener Director por id
-directorRouter.get("/:id", obtenerDirectorPorIdHandler);
+directorRouter.get("/:id", validarParametroId,obtenerDirectorPorIdHandler);
 // Editar Director (completo)
-directorRouter.put("/:id", editarDirectorHandler);
+directorRouter.put("/:id", validacionesPutDirector ,editarDirectorHandler);
 // Editar Director (parcial)
-directorRouter.patch("/:id", editarParcialDirectorHandler);
+directorRouter.patch("/:id", validacionesPatchDirector,editarParcialDirectorHandler);
 
 export default directorRouter;
