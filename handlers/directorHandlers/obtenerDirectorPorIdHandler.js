@@ -7,6 +7,7 @@ const obtenerDirectorPorIdHandler = async (req, res) => {
     if(!errors.isEmpty()) return res.status(400).json({error: errors.array()});
     const {id} = req.params;
     const director = await obtenerDirectorPorId(id);
+    if(!director) return res.status(400).send({error: "Director inexistente"});
     return res.status(200).json(director);
   } catch (error) {
     console.log(error);
