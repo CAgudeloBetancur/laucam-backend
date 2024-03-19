@@ -13,13 +13,11 @@ const DirectorSchema = Schema({
     },
     fechaCreacion: {
         type: Date, 
-        required: true,
-        default: new Date(),
+        required: true
     },
     fechaActualizacion: {
         type: Date, 
-        required: true,
-        default: new Date(),
+        required: true
     }
 });
 

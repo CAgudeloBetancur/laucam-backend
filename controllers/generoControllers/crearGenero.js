@@ -8,6 +8,9 @@ const crearGenero = async (srcGenero) => {
     "estado": "estado",
     "descripcion": "descripcion"
   });
+
+  genero.fechaCreacion = new Date();
+  genero.fechaActualizacion = new Date();
   genero = await genero.save();
   return genero;
 }
