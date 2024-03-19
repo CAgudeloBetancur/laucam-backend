@@ -1,4 +1,4 @@
-import { estados } from "../utils/valores";
+import { estados } from "../utils/valores.js";
 import {Schema, model} from "mongoose";
 
 const ProductoraSchema = Schema({
@@ -21,13 +21,11 @@ const ProductoraSchema = Schema({
     },
     fechaCreacion: {
         type: Date, 
-        required: true,
-        default: new Date(),
+        required: true
     },
     fechaActualizacion: {
         type: Date, 
-        required: true,
-        default: new Date(),
+        required: true       
     }
 });
 
