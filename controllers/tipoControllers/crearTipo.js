@@ -7,6 +7,9 @@ const crearTipo = async (srcTipo) => {
         "nombre": "nombre",
         "descripcion": "descripcion"
     }) 
+
+    tipo.fechaCreacion = new Date();
+    tipo.fechaActualizacion = new Date();
     tipo =  await tipo.save();
     return tipo;          
 }

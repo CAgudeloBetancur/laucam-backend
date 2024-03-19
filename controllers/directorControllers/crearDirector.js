@@ -7,6 +7,9 @@ const crearDirector = async (srcDirector) => {
     "nombre" : "nombre",
     "estado": "estado"
   });
+
+  director.fechaCreacion = new Date();
+  director.fechaActualizacion = new Date();
   director = await director.save();
   return director;
 }
