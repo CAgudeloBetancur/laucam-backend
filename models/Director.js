@@ -1,4 +1,4 @@
-import { estados } from "../utils/valores";
+import { estados } from "../utils/valores.js";
 import {Schema, model} from "mongoose";
 
 const DirectorSchema = Schema({
