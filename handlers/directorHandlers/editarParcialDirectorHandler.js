@@ -3,8 +3,6 @@ import editarParcialDirector from "../../controllers/directorControllers/editarP
 
 const editarParcialDirectorHandler = async (req, res) => {
   try {
-    const errors = validationResult(req);
-    if(!errors.isEmpty()) return res.status(200).json({error: errors.array()});
     const {id} = req.params;
     const propiedades = req.body;
     const result = await editarParcialDirector(propiedades, id);

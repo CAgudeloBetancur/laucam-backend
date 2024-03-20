@@ -3,8 +3,6 @@ import editarDirector from "../../controllers/directorControllers/editarDirector
 
 const editarDirectorHandler = async (req, res) => {
   try {
-    const errors = validationResult(req);
-    if(!errors.isEmpty()) return res.status(400).json({error: errors.array()});
     const srcDirector = req.body;
     const {id} = req.params;
     const directorActualizado = await editarDirector(srcDirector, id);

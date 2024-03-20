@@ -3,8 +3,6 @@ import eliminarDirector from "../../controllers/directorControllers/eliminarDire
 
 const eliminarDirectorHandler = async (req, res) => {
   try {
-    const errors = validationResult(req);
-    if(!errors.isEmpty()) return res.status(400).json({error: errors.array()});
     const {id} = req.params;
     const result = await eliminarDirector(id);
     if(!result.deleted) return res.status(400).json({error: "Director inexistente"});
