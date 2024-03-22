@@ -3,6 +3,8 @@ import obtenerDirectorPorId from "../../controllers/directorControllers/obtenerD
 
 const obtenerDirectorPorIdHandler = async (req, res) => {
   try {
+    const errors = validationResult(req);
+    if(!errors.isEmpty()) return res.status(400).json({errors: errors.array()});
     const {id} = req.params;
     const director = await obtenerDirectorPorId(id);
     if(!director) return res.status(400).send({error: "Director inexistente"});

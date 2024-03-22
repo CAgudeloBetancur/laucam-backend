@@ -3,6 +3,8 @@ import eliminarMedia from "../../controllers/mediaControllers/eliminarMedia.js";
 
 const eliminarMediaHandler = async (req, res) => {
   try {
+    const errors = validationResult(req);
+    if(!errors.isEmpty()) return res.status(400).json({errors: errors.array()});
     const {id} = req.params;
     const result = await eliminarMedia(id);
     if(!result.deleted) return res.status(400).json({error: "Media inexistente"});

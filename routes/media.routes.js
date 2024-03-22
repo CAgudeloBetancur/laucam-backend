@@ -14,19 +14,25 @@ import editarParcialMediaHandler from "../handlers/mediaHandlers/editarParcialMe
 import { 
     validarParametroId } 
     from "../middlewares/common/validarParametroId.js";
-  
+import { 
+    validacionesPatchMedia, 
+    validacionesPostMedia, 
+    validacionesPutMedia } 
+    from "../middlewares/rutaMediaMiddlewares.js";
+
 //Rutas
+
 // Crear Media
-mediaRouter.post("/", crearMediaHandler);
+mediaRouter.post("/", validacionesPostMedia,crearMediaHandler);
 // Listar Media
 mediaRouter.get("/lista", listarMediaHandler);
 // Obtener Media por id
-mediaRouter.get("/:id",obtenerMediaPorIdHandler);
+mediaRouter.get("/:id", validarParametroId, obtenerMediaPorIdHandler);
 // Eliminar Director por id
 mediaRouter.delete("/:id", validarParametroId, eliminarMediaHandler);
 // Editar Media (completo)
-mediaRouter.put("/:id", editarMediaHandler);
+mediaRouter.put("/:id", validacionesPutMedia, editarMediaHandler);
 // Editar Media (parcial)
-mediaRouter.patch("/:id", editarParcialMediaHandler);
+mediaRouter.patch("/:id", validacionesPatchMedia, editarParcialMediaHandler);
 
 export default mediaRouter;
