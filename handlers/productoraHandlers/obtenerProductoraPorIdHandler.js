@@ -3,6 +3,8 @@ import obtenerProductoraPorId from "../../controllers/productoraControllers/obte
 
 const obtenerProductoraPorIdHandler = async (req, res) => {
   try {
+    const errors = validationResult(req);
+    if(!errors.isEmpty()) return res.status(400).json({errors: errors.array()});
     const {id} = req.params;
     const productora = await obtenerProductoraPorId(id);
     if(!productora) return res.status(400).send({error: "Productora inexistente"});

@@ -6,7 +6,7 @@ const editarMediaHandler = async (req, res) => {
     const srcMedia = req.body;
     const {id} = req.params;
     const mediaActualizada = await editarMedia(srcMedia, id);
-    if(!mediaActualizada) return res.status(400).json({error: "Media inexistente"});
+    if(!mediaActualizada) return res.status(400).json({error: "El id indicado no corresponde a ningún registro"});
     return res.status(200).json(mediaActualizada);
   } catch (error) {
     console.log(error);
