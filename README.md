@@ -24,6 +24,20 @@ Todos los modelos tienen los siguientes métodos:
   - PATCH
   - DELETE
 
+<br>
+
+Para que la api funcione correctamente y pueda conectarse a Mongo Atlas, se debe agregar el archivo .env con las siguientes variables de entorno:
+
+```c#
+  PORT = int
+  ATLAS_USER = string
+  ATLAS_PASSWORD = string
+  DB_NAME = string
+  BASE_URL = string
+  ATLAS_APP_NAME = string
+```
+<br>
+
 > Cuando se reemplaze `{modelo}` por el modelo con el que se quiera trabajar en la `ruta`, debe usarse el nombre del **modelo** completamente en **`minúscula`**
 
 El uso de los métodos `GET ( lista )`, `GET ( id )`, `PATCH` y `DELETE` es igual en todos los modelos:
@@ -35,7 +49,7 @@ El uso de los métodos `GET ( lista )`, `GET ( id )`, `PATCH` y `DELETE` es igua
 
 `Respuestas`
 
-```
+```c#
 200 | OK --> arreglo
 400 | bad request --> objeto error
 500 | error servidor --> objeto error
