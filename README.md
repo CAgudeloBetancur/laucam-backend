@@ -33,9 +33,9 @@ El uso de los métodos `GET ( lista )`, `GET ( id )`, `PATCH` y `DELETE` es igua
 🟢 GET [url_base]/{modelo}/lista 
 ```
 
-```json
-Respuesta
+`Respuestas`
 
+```json
 200 | OK --> arreglo
 400 | bad request --> objeto error
 500 | error servidor --> objeto error
@@ -47,9 +47,9 @@ Respuesta
 🟢 GET [url_base]/{modelo}/:id 
 ```
 
-```json
-Respuesta
+`Respuestas`
 
+```json
 200 | OK --> objeto
 400 | bad request --> objeto error
 500 | error servidor --> objeto error
@@ -62,17 +62,18 @@ Respuesta
 ```
 Recordar que en el **body** de `PATCH` se puede indicar la cantidad deseada de propiedades a editar, no necesariamente debe ir el esquema completo.
 
-```json
-Body
+`Body`
 
+```json
 {
   "propiedad": "valor",
-  ...
+  "...": "..."
 }
 ```
 
+`Respuestas`
+
 ```json
-Respuesta
 
 200 | OK --> objeto
 400 | bad request --> objeto error
@@ -85,9 +86,9 @@ Respuesta
 🔴 DELETE [url_base]/{modelo}/:id 
 ```
 
-```json
-Respuesta
+`Respuestas`
 
+```json
 200 | OK --> arreglo (confirmacion)
 400 | bad request --> objeto error
 500 | error servidor --> objeto error
@@ -104,9 +105,9 @@ En todos los **`modelos`**, los métodos `POST` y `PUT`, tienen el siguiente uso
 🟡 POST [url_base]/{modelo} 
 ```
 
-```json
-Respuestas
+`Respuestas`
 
+```json
 200 | OK --> objeto creado
 400 | bad request --> objeto error
 500 | error del servidor --> objeto error
@@ -118,9 +119,9 @@ Respuestas
 🔵 PUT [url_base]/{modelo}/:id
 ```
 
-```json
-Respuesta
+`Respuestas`
 
+```json
 200 | OK --> objeto editado
 400 | bad request --> objeto error
 400 | error del servidor --> objeto error
@@ -134,9 +135,9 @@ Ahora, cuando se use tanto `PUT` como `POST` en cada **modelo**, su `body` debe 
 
 #### Director
 
-```json
-Body | PUT & POST
+`Body | PUT & POST`
 
+```json
 {
   "nombre": "string",
   "estado": "string"
@@ -146,9 +147,9 @@ Body | PUT & POST
 
 #### Genero
 
-```json
-Body | PUT & POST
+`Body | PUT & POST`
 
+```json
 {
   "nombre": "string",
   "estado": "string",
@@ -159,9 +160,9 @@ Body | PUT & POST
 
 #### Media
 
-```json
-Body | PUT & POST
+`Body | PUT & POST`
 
+```json
 {
     "serial" : "string",
     "titulo": "string",
@@ -187,8 +188,9 @@ Body | PUT & POST
 
 #### Productora
 
+`Body | PUT & POST`
+
 ```json
-Body | PUT & POST
 
 {
   "nombre": "string",
@@ -201,9 +203,9 @@ Body | PUT & POST
 
 #### Tipo
 
-```json
-Body | PUT & POST
+`Body | PUT & POST`
 
+```json
 {
   "nombre": "string",
   "descripcion": "string"
@@ -220,9 +222,9 @@ Body | PUT & POST
 🟡 POST [url_base]/productora 
 ```
 
-```json
-Body
+`Body`
 
+```json
 {
   "nombre": "string",
   "estado": "string",
@@ -250,9 +252,8 @@ Body
 🔵 PUT [url_base]/productora/65fa32a56d1ffza655605e1b
 ```
 
+`Body`
 ```json
-Body
-
 {
   "nombre": "string",
   "estado": "string",
@@ -266,9 +267,9 @@ Body
 ```
 🟣 PATCH [url_base]/productora/65fl32a56d1ffza6o5605e1
 ```
-```json
-Body
+`Body`
 
+```json
 {
   "estado": "string",
   "slogan": "string",
