@@ -1,13 +1,13 @@
 import { validationResult } from "express-validator";
-import eliminarDirector from "../../controllers/directorControllers/eliminarDirector.js";
+import eliminarMedia from "../../controllers/mediaControllers/eliminarMedia.js";
 
-const eliminarDirectorHandler = async (req, res) => {
+const eliminarMediaHandler = async (req, res) => {
   try {
     const errors = validationResult(req);
     if(!errors.isEmpty()) return res.status(400).json({errors: errors.array()});
     const {id} = req.params;
-    const result = await eliminarDirector(id);
-    if(!result.deleted) return res.status(400).json({error: "Director inexistente"});
+    const result = await eliminarMedia(id);
+    if(!result.deleted) return res.status(400).json({error: "Media inexistente"});
     return res.status(200).json(result);
   } catch (error) {
     console.log(error);
@@ -15,4 +15,4 @@ const eliminarDirectorHandler = async (req, res) => {
   }
 }
 
-export default eliminarDirectorHandler;
+export default eliminarMediaHandler;

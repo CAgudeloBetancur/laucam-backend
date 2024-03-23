@@ -14,9 +14,7 @@ import {
   validacionesPostTipo, 
   validacionesPutTipo } 
   from "../middlewares/rutaTipoMiddlewares.js";
-import { 
-  validarParametroId } 
-  from "../middlewares/common/validarParametroId.js";
+import { validarParametroId } from "../middlewares/common/validarParametroId.js";
 
 // Rutas
 
