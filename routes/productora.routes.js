@@ -7,22 +7,27 @@ import editarParcialProductoraHandler from "../handlers/productoraHandlers/edita
 import eliminarProductoraHandler from "../handlers/productoraHandlers/eliminarProductoraHandler.js";
 import listarProductoraHandler from "../handlers/productoraHandlers/listarProductoraHandler.js";
 import obtenerProductoraPorIdHandler from "../handlers/productoraHandlers/obtenerProductoraPorIdHandler.js";
+// Middlewares
+import { 
+  validacionesPatchProductora, 
+  validacionesPostProductora, 
+  validacionesPutProductora } 
+  from "../middlewares/rutaProductoraMiddlewares.js";
+import { validarParametroId } from "../middlewares/common/validarParametroId.js";
+
+// Rutas
+
 // Crear productora
-productoraRouter.post("/", crearProductoraHandler);
-
-// Editar Productora (completa)
-productoraRouter.put("/:id", editarProductoraHandler);
-
-// Editar Productora (parcial)
-productoraRouter.patch("/:id", editarParcialProductoraHandler);
-
-// Eliminar Productora por id
-productoraRouter.delete("/:id",  eliminarProductoraHandler);
-
+productoraRouter.post("/", validacionesPostProductora, crearProductoraHandler);
 // Listar Productora
 productoraRouter.get("/lista", listarProductoraHandler);
-
+// Eliminar Productora por id
+productoraRouter.delete("/:id", validarParametroId, eliminarProductoraHandler);
+// Editar Productora (completa)
+productoraRouter.put("/:id", validacionesPutProductora, editarProductoraHandler);
+// Editar Productora (parcial)
+productoraRouter.patch("/:id", validacionesPatchProductora, editarParcialProductoraHandler);
 // Obtener Productora por id
-productoraRouter.get("/:id", obtenerProductoraPorIdHandler);
+productoraRouter.get("/:id", validarParametroId, obtenerProductoraPorIdHandler);
 
 export default productoraRouter;
