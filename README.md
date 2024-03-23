@@ -28,7 +28,7 @@ Todos los modelos tienen los siguientes métodos:
 
 Para que la api funcione correctamente y pueda conectarse a Mongo Atlas, se debe agregar el archivo .env con las siguientes variables de entorno:
 
-```c#
+```js
   PORT = int
   ATLAS_USER = string
   ATLAS_PASSWORD = string
@@ -49,7 +49,7 @@ El uso de los métodos `GET ( lista )`, `GET ( id )`, `PATCH` y `DELETE` es igua
 
 `Respuestas`
 
-```c#
+```
 200 | OK --> arreglo
 400 | bad request --> objeto error
 500 | error servidor --> objeto error
