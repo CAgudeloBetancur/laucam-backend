@@ -35,7 +35,7 @@ El uso de los métodos `GET ( lista )`, `GET ( id )`, `PATCH` y `DELETE` es igua
 
 `Respuestas`
 
-```json
+```
 200 | OK --> arreglo
 400 | bad request --> objeto error
 500 | error servidor --> objeto error
@@ -49,7 +49,7 @@ El uso de los métodos `GET ( lista )`, `GET ( id )`, `PATCH` y `DELETE` es igua
 
 `Respuestas`
 
-```json
+```
 200 | OK --> objeto
 400 | bad request --> objeto error
 500 | error servidor --> objeto error
@@ -73,7 +73,7 @@ Recordar que en el **body** de `PATCH` se puede indicar la cantidad deseada de p
 
 `Respuestas`
 
-```json
+```
 
 200 | OK --> objeto
 400 | bad request --> objeto error
@@ -88,7 +88,7 @@ Recordar que en el **body** de `PATCH` se puede indicar la cantidad deseada de p
 
 `Respuestas`
 
-```json
+```
 200 | OK --> arreglo (confirmacion)
 400 | bad request --> objeto error
 500 | error servidor --> objeto error
@@ -107,7 +107,7 @@ En todos los **`modelos`**, los métodos `POST` y `PUT`, tienen el siguiente uso
 
 `Respuestas`
 
-```json
+```
 200 | OK --> objeto creado
 400 | bad request --> objeto error
 500 | error del servidor --> objeto error
@@ -121,7 +121,7 @@ En todos los **`modelos`**, los métodos `POST` y `PUT`, tienen el siguiente uso
 
 `Respuestas`
 
-```json
+```
 200 | OK --> objeto editado
 400 | bad request --> objeto error
 400 | error del servidor --> objeto error
