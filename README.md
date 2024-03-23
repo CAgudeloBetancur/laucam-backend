@@ -109,6 +109,10 @@ Recordar que en el **body** de `PATCH` se puede indicar la cantidad deseada de p
 ```
 ---
 
+<br>
+
+> En las rutas que usen el parámetro **`:id`**, este debe ser un **identificador válido para MongoDb**; dicho parámetro cuenta con validación. 
+
 ### Particularidades de los métodos `POST` y `PUT`
 
 Para los métodos `POST` y `PUT` lo que cambia en cada modelo es que en el body debe estar el esquema completo, con todas las propiedades correspondientes al **modelo**.
@@ -198,6 +202,8 @@ Ahora, cuando se use tanto `PUT` como `POST` en cada **modelo**, su `body` debe 
     }
 }
 ```
+>La propiedad `_id` recibe como valor un **`ObjectId`** que debe ser un **identificador válido para MongoDb**; esto cuenta con validación para evitar errores de registro.
+
 ---
 
 #### Productora
