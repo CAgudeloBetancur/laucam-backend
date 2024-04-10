@@ -2,7 +2,8 @@ import listarProductora from "../../controllers/productoraControllers/listarProd
 
 const listarProductoraHandler = async (req, res) => {
   try {
-    const productora = await listarProductora();
+    const soloActivos = req.query.soloActivos === 'true';
+    const productora = await listarProductora(soloActivos);
     return res.status(200).send(productora);
   } catch (error) {
     console.log(error);

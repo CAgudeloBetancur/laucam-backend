@@ -1,7 +1,7 @@
 import Productora from "../../models/Productora.js";
 
-const listarProductora = async () => {
-  const productoras = await Productora.find();
+const listarProductora = async (soloActivos) => {
+  const productoras = await Productora.find((soloActivos) ? {estado: 'Activo'} : {});
   return productoras;
 }
 

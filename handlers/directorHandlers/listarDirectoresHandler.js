@@ -2,7 +2,8 @@ import listarDirectores from "../../controllers/directorControllers/listarDirect
 
 const listarDirectoresHandler = async (req, res) => {
   try {
-    const directores = await listarDirectores();
+    const soloActivos = req.query.soloActivos === 'true';
+    const directores = await listarDirectores(soloActivos);
     return res.status(200).send(directores);
   } catch (error) {
     console.log(error);

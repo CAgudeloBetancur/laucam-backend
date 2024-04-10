@@ -9,7 +9,7 @@ const editarMedia = async (srcMedia, id) => {
         "titulo": "titulo",
         "sinopsis": "sinopsis",
         "urlPelicula": "urlPelicula",
-        "urlImagen": "urlImagen",
+        "imagen": "imagen",
         "fechaEstreno": "fechaEstreno",
         "generoPrincipal._id": "generoPrincipal",
         "directorPrincipal._id": "directorPrincipal",
