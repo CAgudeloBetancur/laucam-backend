@@ -1,7 +1,7 @@
 import Genero from "../../models/Genero.js"
 
-const listarGeneros = async () => {
-  const generos = await Genero.find();
+const listarGeneros = async (soloActivos) => {
+  const generos = await Genero.find((soloActivos) ? {estado: 'Activo'} : {});
   return generos;
 }
 

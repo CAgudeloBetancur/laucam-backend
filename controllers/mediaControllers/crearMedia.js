@@ -8,7 +8,7 @@ const crearMedia = async (srcMedia) => {
     "titulo": "titulo",
     "sinopsis": "sinopsis",
     "urlPelicula": "urlPelicula",
-    "urlImagen": "urlImagen",
+    "imagen": "imagen",
     "fechaEstreno": "fechaEstreno",
     "generoPrincipal._id": "generoPrincipal",
     "directorPrincipal._id": "directorPrincipal",

@@ -2,7 +2,8 @@ import listarGeneros from "./../../controllers/generoControllers/listarGeneros.j
 
 const listarGenerosHandler = async (req, res) => {
   try{
-    const generos = await listarGeneros();
+    const soloActivos = req.query.soloActivos === 'true';
+    const generos = await listarGeneros(soloActivos);
     return res.status(200).send(generos);
   }catch(error) {
     console.log(error);

@@ -18,9 +18,9 @@ const MediaSchema = Schema({
         type: String,
         required: true,
     },  
-    urlImagen: {
+    imagen: {
         type: String,
-        required: true,
+        required: true
     }, 
     fechaEstreno: {
         type: Date,

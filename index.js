@@ -6,8 +6,8 @@ import { BASE_URL, PORT } from "./config.js";
 
 const app = express();
 app.use(cors());
+app.use(express.json({limit: '25mb'}));
 getConnection();
-app.use(express.json());
 app.use("/", router);
 app.listen(PORT,()=>{ 
     console.log(`app en ${ BASE_URL }:${PORT}`);

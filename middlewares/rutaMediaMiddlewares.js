@@ -88,8 +88,8 @@ const validarMediaBodyPatch = [
   check('urlPelicula', 'urlPelicula requerido')
     .if(body('urlPelicula').exists())
     .notEmpty(),
-  check('urlImagen', 'urlImagen requerido')
-    .if(body('urlImagen').exists())
+    check('imagen', 'imagen requerido')
+    .if(body('imagen').exists())
     .notEmpty(),
   check('fechaEstreno', 'fechaEstreno requerido')
     .if(body('fechaEstreno').exists())
@@ -120,7 +120,7 @@ const validarMediaBody = [
     .notEmpty(),
   check('urlPelicula', 'urlPelicula requerido')
     .notEmpty(),
-  check('urlImagen', 'urlImagen requerido')
+  check('imagen', 'imagen requerido')
     .notEmpty(),
   check('fechaEstreno', 'fechaEstreno requerido')
     .notEmpty()

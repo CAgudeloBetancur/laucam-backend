@@ -1,7 +1,7 @@
 import Director from "../../models/Director.js";
 
-const listarDirectores = async () => {
-  const directores = await Director.find();
+const listarDirectores = async (soloActivos) => {
+  const directores = await Director.find((soloActivos) ? {estado: 'Activo'} : {});
   return directores;
 }
 
