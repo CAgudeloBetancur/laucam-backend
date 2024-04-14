@@ -1,5 +1,5 @@
 import { validationResult } from "express-validator";
-import eliminarProductora from "../../controllers/ProductoraControllers/eliminarProductora.js";
+import eliminarProductora from "./../../controllers/productoraControllers/eliminarProductora.js";
 
 const eliminarProductoraHandler = async (req, res) => {
   try {
